@@ -2,6 +2,7 @@
 $("button").on("click", function () {
     // In this case, the "this" keyword refers to the button that was clicked
     var person = $(this).attr("data-person");
+    console.log(person); 
     $("#gifs-appear-here").empty();
 
     // Constructing a URL to search Giphy for the name of the person who said the quote
