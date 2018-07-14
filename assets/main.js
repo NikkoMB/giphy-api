@@ -1,8 +1,9 @@
 // Event listener for all button elements
-$("button").on("click", function () {
+$("#buttons-go-here").on("click", "button",  function () {
+    console.log('nikko');
     // In this case, the "this" keyword refers to the button that was clicked
     var person = $(this).attr("data-person");
-    console.log(person); 
+    console.log(person);
     $("#gifs-appear-here").empty();
 
     // Constructing a URL to search Giphy for the name of the person who said the quote
@@ -13,9 +14,9 @@ $("button").on("click", function () {
 
     // Performing our AJAX GET request
     $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
+            url: queryURL,
+            method: "GET"
+        })
         // After the data comes back from the API
         .then(function (response) {
             // Storing an array of results in the results variable
@@ -49,25 +50,7 @@ $("button").on("click", function () {
                     // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                     $("#gifs-appear-here").prepend(gifDiv);
                 }
-                $('img').on('click', function () {
-
-                    var state = $(this).attr('data-person');
-                    console.log(state);
-
-                    if (state == 'still') {
-
-                        $(this).attr('src', $(this).data('animate'));
-
-                        $(this).attr('data-person', 'animate');
-
-                    } else {
-
-                        $(this).attr('src', $(this).data('still'));
-
-                        $(this).attr('data-person', 'still');
-                    }
-
-                });
+              
             }
         });
 
@@ -77,7 +60,9 @@ $("#add-button").on("click", function (event) {
     event.preventDefault()
     $("#gifs-appear-here").empty();
     var inputText = $("#input-text").val().trim();
-    var buttonTag = $("<button>").addClass("btn btn-secondary").attr('data-person', inputText).css({ 'margin': '5px' });
+    var buttonTag = $("<button>").addClass("btn btn-secondary").attr('data-person', inputText).css({
+        'margin': '5px'
+    });
     buttonTag.text(inputText);
     $("#buttons-go-here").append(buttonTag);
     console.log(buttonTag);
@@ -86,9 +71,9 @@ $("#add-button").on("click", function (event) {
         inputText + "&api_key=ZObuCGpXH7JfzssZCJYAWQtyQnB757oP&limit=10"
     // Performing our AJAX GET request
     $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
+            url: queryURL,
+            method: "GET"
+        })
         // After the data comes back from the API
         .then(function (response) {
             // Storing an array of results in the results variable
@@ -122,27 +107,27 @@ $("#add-button").on("click", function (event) {
                     // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                     $("#gifs-appear-here").prepend(gifDiv);
                 }
-                $('img').on('click', function () {
 
-                    var state = $(this).attr('data-person');
-                    console.log(this);
-
-                    if (state == 'still') {
-
-                        $(this).attr('src', $(this).data('animate'));
-
-                        $(this).attr('data-person', 'animate');
-
-                    } else {
-
-                        $(this).attr('src', $(this).data('still'));
-
-                        $(this).attr('data-person', 'still');
-                    }
-                });
             }
         });
 
 
 })
+$('img').on('click', function () {
 
+    var state = $(this).attr('data-person');
+    console.log(this);
+
+    if (state == 'still') {
+
+        $(this).attr('src', $(this).data('animate'));
+
+        $(this).attr('data-person', 'animate');
+
+    } else {
+
+        $(this).attr('src', $(this).data('still'));
+
+        $(this).attr('data-person', 'still');
+    }
+});
