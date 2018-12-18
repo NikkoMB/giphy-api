@@ -20,6 +20,7 @@ h1 {
     margin-right: 30px;
     font-family: 'Staatliches', cursive;
     font-size: 100px; 
+    color: gold; 
 }
 
 
@@ -77,9 +78,14 @@ form.example::after {
    margin-top: 50px;
    width: 100px; 
   
+  
 }
 
 #input-text{
     margin-left: 620px; 
     margin-top: 50px; 
+}
+
+p{
+    color: gold; 
 }
