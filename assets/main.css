@@ -17,15 +17,11 @@ select {
 
 h1 {
     text-align: center;
-    margin-right: 50px;
+    margin-right: 30px;
+    font-family: 'Staatliches', cursive;
+    font-size: 100px; 
 }
 
-#gifs-appear-here {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 
 body {
     font-family: Arial;
@@ -64,4 +60,26 @@ form.example::after {
     content: "";
     clear: both;
     display: table;
+}
+
+#buttons-go-here{
+    margin-left: 380px; 
+    margin-top: 50px;
+}
+
+#gifs-appear-here{
+    margin-left: 500px; 
+    width: 50%;
+}
+
+#add-button{
+   margin-left: 650px; 
+   margin-top: 50px;
+   width: 100px; 
+  
+}
+
+#input-text{
+    margin-left: 620px; 
+    margin-top: 50px; 
 }
